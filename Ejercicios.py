@@ -27,19 +27,13 @@ sherlockAndAnagrams("abba")
 
 #Tercer Ejercicio
 from itertools import combinations
-
 def shortPalindrome(s):
-    s = s.lower()
-    m = (10**9 + 7) 
-    n_tuplas = 0
-    s1= []
-    for i in s:
-        if s.count(i) >= 2:
-            s1.append(i)
-    comb = combinations(s1, 4)
-    for i in comb:
-        if i[-1]==i[0] and i[1]==i[2]:
-             n_tuplas+=1
-    return n_tuplas%m
+    contador = 0
+    for i in range(len(s)):
+        for j in range(i+1, len(s)):
+            for k in range(j+1, len(s)):
+                if s[j] == s[k]:
+                    contador += s[k+1:].count(s[i])
+    print(contador%((10**9)+7))
 
-shortPalindrome("kkkkkkz")
+shortPalindrome("ghhggh")
