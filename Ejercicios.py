@@ -26,7 +26,6 @@ def sherlockAndAnagrams(s):
 sherlockAndAnagrams("abba")
 
 #Tercer Ejercicio
-from itertools import combinations
 def shortPalindrome(s):
     contador = 0
     for i in range(len(s)):
